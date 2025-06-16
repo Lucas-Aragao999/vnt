@@ -10,7 +10,7 @@ router.get("/", (req, res)=>{
     res.json(automoveis);
 });
 
-router.put("/id", (req, res)=>{
+router.put("/:id", (req, res)=>{
     const id = parseInt(req.params.id);
     const index = automoveis.findIndex(automovel => automovel.id === id);
 
