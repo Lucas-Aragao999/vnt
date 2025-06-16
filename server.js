@@ -1,4 +1,6 @@
 import express from 'express';
+import logger from './src/middlewares/logger.js';
+import automoveisRoute from './src/routes/automoveis.routes.js';
 
 const app = express(); 
 const port = 3000;

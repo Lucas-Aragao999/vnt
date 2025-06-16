@@ -3,7 +3,7 @@ const router = express.Router();
 
 let automoveis = [
     {id: 1, modelo: "Civic", marca: "Honda", ano: 2022},
-    {id: 2, modelo: "gol", marca: "Volskwagen", ano: 1997}
+    {id: 2, modelo: "gol", marca: "Volkswagen", ano: 1997}
 ];
 
 router.get("/", (req, res)=>{
@@ -31,7 +31,7 @@ router.post("/automoveis", (req,res)=>{
     res.status(201).json(novo);
 });
 
-router.delete("/automoveis", (req, res)=>{
+router.delete("/automoveis/:id", (req, res)=>{
     const id = parseInt(req.params.id);
     automoveis = automoveis.filter(automovel => automovel.id !== id);
     res.json({message: "automovel deletado com sucesso"});
